@@ -1,0 +1,1 @@
+/home/ndrd/Projects/car_detection_final/cosmic_car_detector/CMakeFiles/car-detector.dir
