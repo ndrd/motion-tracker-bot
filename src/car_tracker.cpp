@@ -21,8 +21,6 @@ int main(int argc, const char* argv[])
  Ptr<BackgroundSubtractor> pMOG; //MOG Background subtractor  
  pMOG = new BackgroundSubtractorMOG();  
 
- BlobTracking* blobTracking;
- blobTracking = new BlobTracking;
 
  string fileName = argv[1]; 
  VideoCapture stream1(fileName);   //0 is the id of video device.0 if you have only one camera     
@@ -33,20 +31,18 @@ int main(int argc, const char* argv[])
  //unconditional loop     
  while (true) {     
   Mat cameraFrame;     
-  if(!(stream1.read(frame))) //get one frame form video     
-   break;  
+  if(!(stream1.read(frame))){
+    cout << "Cannot read the frame" << endl;
+    break; 
+
+  } //get one frame form video     
     
   //resize(frame, frame, Size(frame.size().width, frame.size().height/2) );  
   pMOG->operator()(frame, fgMaskMOG);
-  
-  if(!fgMaskMOG.empty()) 
-  {
-  	blobTracking->process_blob(frame, fgMaskMOG, img_blob);
-  }
+
   
   imshow("Origin", frame);  
   imshow("MaaOG", fgMaskMOG);  
-  imshow("blob", img_blob);  
   
   if (waitKey(2) >= 0)     
    break;     

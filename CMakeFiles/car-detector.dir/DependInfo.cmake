@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/car_tracker.cpp" "/home/ndrd/Projects/car_detection_final/cosmic_car_detector/CMakeFiles/car-detector.dir/src/car_tracker.cpp.o"
-  "/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/tracker/BlobTracking.cpp" "/home/ndrd/Projects/car_detection_final/cosmic_car_detector/CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o"
+  "/Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/car_tracker.cpp.o"
+  "/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
@@ -17,6 +17,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/local/include/opencv"
   "/usr/local/include"
+  "/usr/local/Cellar/cvblob/0.10.4/include"
   )
 set(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 set(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

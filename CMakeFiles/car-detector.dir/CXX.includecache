@@ -6,33 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/car_tracker.cpp
+/Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp
 iostream
 -
 opencv2/opencv.hpp
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/opencv2/opencv.hpp
+/Users/ndrd/Projects/tripping-ninja/src/opencv2/opencv.hpp
 opencv2/core/core.hpp
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/opencv2/core/core.hpp
+/Users/ndrd/Projects/tripping-ninja/src/opencv2/core/core.hpp
 opencv2/highgui/highgui.hpp
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/opencv2/highgui/highgui.hpp
+/Users/ndrd/Projects/tripping-ninja/src/opencv2/highgui/highgui.hpp
 opencv2/video/background_segm.hpp
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/opencv2/video/background_segm.hpp
+/Users/ndrd/Projects/tripping-ninja/src/opencv2/video/background_segm.hpp
 tracker/BlobTracking.hpp
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/tracker/BlobTracking.hpp
+/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
 
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/tracker/BlobTracking.hpp
+/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp
+BlobTracking.hpp
+/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
+
+/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
 iostream
 -
 opencv2/opencv.hpp
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/tracker/opencv2/opencv.hpp
+/Users/ndrd/Projects/tripping-ninja/src/tracker/opencv2/opencv.hpp
 opencv2/highgui/highgui.hpp
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/tracker/opencv2/highgui/highgui.hpp
+/Users/ndrd/Projects/tripping-ninja/src/tracker/opencv2/highgui/highgui.hpp
 cv.h
 -
 highgui.h
 -
 cvblob.h
-/home/ndrd/Projects/car_detection_final/cosmic_car_detector/src/tracker/cvblob.h
+/Users/ndrd/Projects/tripping-ninja/src/tracker/cvblob.h
 
 /usr/local/include/cvblob.h
 cvblob.h
