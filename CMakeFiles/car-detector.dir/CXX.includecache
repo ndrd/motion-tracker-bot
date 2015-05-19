@@ -21,6 +21,10 @@ tracker/BlobTracking.hpp
 /Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
 detector/VehicleCouting.h
 /Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.h
+opencv2/imgproc/imgproc.hpp
+/Users/ndrd/Projects/tripping-ninja/src/opencv2/imgproc/imgproc.hpp
+opencv2/video/video.hpp
+/Users/ndrd/Projects/tripping-ninja/src/opencv2/video/video.hpp
 
 /Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.cpp
 VehicleCouting.h

@@ -5,6 +5,8 @@
 #include "opencv2/video/background_segm.hpp"
 #include "tracker/BlobTracking.hpp"  
 #include "detector/VehicleCouting.h"  
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/video/video.hpp"
 
 using namespace cv;
 using namespace cvb;  
@@ -20,7 +22,7 @@ int main(int argc, const char* argv[])
   
   
  Ptr<BackgroundSubtractor> pMOG; //MOG Background subtractor  
- pMOG = new BackgroundSubtractorMOG();  
+ pMOG = new BackgroundSubtractorMOG2();  
 
   /* Blob Tracking Algorithm */
  Mat  img_blob; 
@@ -46,9 +48,13 @@ int main(int argc, const char* argv[])
     cout << "Cannot read the frame" << endl;
     break; 
 
-  } //get one frame form video     
-    
-  resize(frame, frame, Size(frame.size().width/2, frame.size().height/2) );  
+  } //get one frame form video    
+
+   stream1.set(CV_CAP_PROP_FPS, 35); 
+      
+//  resize(frame, frame, Size(frame.size().width/2, frame.size().height/2) );  
+
+  medianBlur(frame, frame, 11);
   pMOG->operator()(frame, fgMaskMOG);
   
   if ( !fgMaskMOG.empty())
@@ -62,9 +68,9 @@ int main(int argc, const char* argv[])
 
   }
   
-  imshow("Origin", frame);  
-  imshow("Blobl", img_blob);  
-  imshow("MaaOG", fgMaskMOG);  
+//  imshow("Origin", frame);  
+  //imshow("Blobl", img_blob);  
+  //imshow("MaaOG", fgMaskMOG);  
   
   if (waitKey(1) >= 0)     
    break;     
