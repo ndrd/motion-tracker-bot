@@ -4,6 +4,7 @@
 #include "opencv2/highgui/highgui.hpp"  
 #include "opencv2/video/background_segm.hpp"
 #include "tracker/BlobTracking.hpp"  
+#include "detector/VehicleCouting.h"  
 
 using namespace cv;
 using namespace cvb;  
@@ -21,30 +22,51 @@ int main(int argc, const char* argv[])
  Ptr<BackgroundSubtractor> pMOG; //MOG Background subtractor  
  pMOG = new BackgroundSubtractorMOG();  
 
+  /* Blob Tracking Algorithm */
+ Mat  img_blob; 
+  BlobTracking* blobTracking;
+  blobTracking = new BlobTracking;
+
+  /* Vehicle Counting Algorithm */
+  VehicleCouting* vehicleCouting;
+  vehicleCouting = new VehicleCouting;
+
+
 
  string fileName = argv[1]; 
  VideoCapture stream1(fileName);   //0 is the id of video device.0 if you have only one camera     
   
  Mat element = getStructuringElement(MORPH_RECT, Size(3, 3), Point(1,1) );     
- Mat  img_blob; 
+ Mat img_mask;
 
  //unconditional loop     
  while (true) {     
-  Mat cameraFrame;     
+
   if(!(stream1.read(frame))){
     cout << "Cannot read the frame" << endl;
     break; 
 
   } //get one frame form video     
     
-  //resize(frame, frame, Size(frame.size().width, frame.size().height/2) );  
+  resize(frame, frame, Size(frame.size().width/2, frame.size().height/2) );  
   pMOG->operator()(frame, fgMaskMOG);
+  
+  if ( !fgMaskMOG.empty())
+  {
+    blobTracking->process(frame, fgMaskMOG, img_blob);
 
+    //Count vehicles
+    vehicleCouting->setInput(img_blob);
+    vehicleCouting->setTracks(blobTracking->getTracks());
+    vehicleCouting->process();
+
+  }
   
   imshow("Origin", frame);  
+  imshow("Blobl", img_blob);  
   imshow("MaaOG", fgMaskMOG);  
   
-  if (waitKey(2) >= 0)     
+  if (waitKey(1) >= 0)     
    break;     
  }
 

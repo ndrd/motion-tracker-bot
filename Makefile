@@ -138,6 +138,30 @@ src/car_tracker.cpp.s:
 	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/car_tracker.cpp.s
 .PHONY : src/car_tracker.cpp.s
 
+src/detector/VehicleCouting.o: src/detector/VehicleCouting.cpp.o
+.PHONY : src/detector/VehicleCouting.o
+
+# target to build an object file
+src/detector/VehicleCouting.cpp.o:
+	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o
+.PHONY : src/detector/VehicleCouting.cpp.o
+
+src/detector/VehicleCouting.i: src/detector/VehicleCouting.cpp.i
+.PHONY : src/detector/VehicleCouting.i
+
+# target to preprocess a source file
+src/detector/VehicleCouting.cpp.i:
+	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.i
+.PHONY : src/detector/VehicleCouting.cpp.i
+
+src/detector/VehicleCouting.s: src/detector/VehicleCouting.cpp.s
+.PHONY : src/detector/VehicleCouting.s
+
+# target to generate assembly for a file
+src/detector/VehicleCouting.cpp.s:
+	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.s
+.PHONY : src/detector/VehicleCouting.cpp.s
+
 src/tracker/BlobTracking.o: src/tracker/BlobTracking.cpp.o
 .PHONY : src/tracker/BlobTracking.o
 
@@ -174,6 +198,9 @@ help:
 	@echo "... src/car_tracker.o"
 	@echo "... src/car_tracker.i"
 	@echo "... src/car_tracker.s"
+	@echo "... src/detector/VehicleCouting.o"
+	@echo "... src/detector/VehicleCouting.i"
+	@echo "... src/detector/VehicleCouting.s"
 	@echo "... src/tracker/BlobTracking.o"
 	@echo "... src/tracker/BlobTracking.i"
 	@echo "... src/tracker/BlobTracking.s"
