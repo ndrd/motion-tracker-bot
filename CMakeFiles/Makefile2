@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/ndrd/Projects/tripping-ninja
 CMakeFiles/car-detector.dir/all:
 	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/depend
 	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles  1 2 3
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles  1 2 3 4
 	@echo "Built target car-detector"
 .PHONY : CMakeFiles/car-detector.dir/all
 
@@ -69,7 +69,7 @@ all: CMakeFiles/car-detector.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/car-detector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/tripping-ninja/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/tripping-ninja/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/car-detector.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/tripping-ninja/CMakeFiles 0
 .PHONY : CMakeFiles/car-detector.dir/rule

@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/car-detector.dir/src/car_tracker.cpp.o"
   "CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o"
   "CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o"
+  "CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o"
   "car-detector.pdb"
   "car-detector"
 )

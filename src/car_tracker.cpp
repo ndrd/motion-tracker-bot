@@ -5,6 +5,7 @@
 #include "opencv2/video/background_segm.hpp"
 #include "tracker/BlobTracking.hpp"  
 #include "detector/VehicleCouting.h"  
+#include "motion/MotionTracker.hpp"  
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/video/video.hpp"
 
@@ -25,7 +26,7 @@ int main(int argc, const char* argv[])
  pMOG = new BackgroundSubtractorMOG2();  
 
   /* Blob Tracking Algorithm */
- Mat  img_blob; 
+  Mat  img_blob; 
   BlobTracking* blobTracking;
   blobTracking = new BlobTracking;
 
@@ -33,6 +34,9 @@ int main(int argc, const char* argv[])
   VehicleCouting* vehicleCouting;
   vehicleCouting = new VehicleCouting;
 
+  /* Motion detector */
+  MotionTracker* tracker;
+  tracker = new MotionTracker;
 
 
  string fileName = argv[1]; 
@@ -40,6 +44,8 @@ int main(int argc, const char* argv[])
   
  Mat element = getStructuringElement(MORPH_RECT, Size(3, 3), Point(1,1) );     
  Mat img_mask;
+
+ tracker->init();
 
  //unconditional loop     
  while (true) {     
@@ -66,11 +72,12 @@ int main(int argc, const char* argv[])
     vehicleCouting->setTracks(blobTracking->getTracks());
     vehicleCouting->process();
 
+    // Estimate the motion flow 
+    tracker->setImageBlob(img_blob);
+    tracker->setTracks(blobTracking->getTracks());
+    tracker->detect();
+
   }
-  
-//  imshow("Origin", frame);  
-  //imshow("Blobl", img_blob);  
-  //imshow("MaaOG", fgMaskMOG);  
   
   if (waitKey(1) >= 0)     
    break;     

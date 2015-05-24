@@ -21,6 +21,8 @@ tracker/BlobTracking.hpp
 /Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
 detector/VehicleCouting.h
 /Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.h
+motion/MotionTracker.hpp
+/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
 opencv2/imgproc/imgproc.hpp
 /Users/ndrd/Projects/tripping-ninja/src/opencv2/imgproc/imgproc.hpp
 opencv2/video/video.hpp
@@ -41,6 +43,20 @@ highgui.h
 -
 cvblob.h
 /Users/ndrd/Projects/tripping-ninja/src/detector/cvblob.h
+
+/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp
+MotionTracker.hpp
+/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
+
+/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
+iostream
+-
+string
+-
+opencv2/opencv.hpp
+/Users/ndrd/Projects/tripping-ninja/src/motion/opencv2/opencv.hpp
+cvblob.h
+/Users/ndrd/Projects/tripping-ninja/src/motion/cvblob.h
 
 /Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp
 BlobTracking.hpp

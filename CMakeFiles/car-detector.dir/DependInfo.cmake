@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/car_tracker.cpp.o"
   "/Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o"
+  "/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o"
   "/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

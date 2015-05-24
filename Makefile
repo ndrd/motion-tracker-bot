@@ -162,6 +162,30 @@ src/detector/VehicleCouting.cpp.s:
 	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.s
 .PHONY : src/detector/VehicleCouting.cpp.s
 
+src/motion/MotionTracker.o: src/motion/MotionTracker.cpp.o
+.PHONY : src/motion/MotionTracker.o
+
+# target to build an object file
+src/motion/MotionTracker.cpp.o:
+	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o
+.PHONY : src/motion/MotionTracker.cpp.o
+
+src/motion/MotionTracker.i: src/motion/MotionTracker.cpp.i
+.PHONY : src/motion/MotionTracker.i
+
+# target to preprocess a source file
+src/motion/MotionTracker.cpp.i:
+	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i
+.PHONY : src/motion/MotionTracker.cpp.i
+
+src/motion/MotionTracker.s: src/motion/MotionTracker.cpp.s
+.PHONY : src/motion/MotionTracker.s
+
+# target to generate assembly for a file
+src/motion/MotionTracker.cpp.s:
+	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s
+.PHONY : src/motion/MotionTracker.cpp.s
+
 src/tracker/BlobTracking.o: src/tracker/BlobTracking.cpp.o
 .PHONY : src/tracker/BlobTracking.o
 
@@ -201,6 +225,9 @@ help:
 	@echo "... src/detector/VehicleCouting.o"
 	@echo "... src/detector/VehicleCouting.i"
 	@echo "... src/detector/VehicleCouting.s"
+	@echo "... src/motion/MotionTracker.o"
+	@echo "... src/motion/MotionTracker.i"
+	@echo "... src/motion/MotionTracker.s"
 	@echo "... src/tracker/BlobTracking.o"
 	@echo "... src/tracker/BlobTracking.i"
 	@echo "... src/tracker/BlobTracking.s"

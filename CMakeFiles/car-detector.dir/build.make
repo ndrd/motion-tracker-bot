@@ -118,11 +118,35 @@ CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o.provides: CMakeFil
 
 CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o.provides.build: CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o
 
+CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o: CMakeFiles/car-detector.dir/flags.make
+CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o: src/motion/MotionTracker.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o -c /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp
+
+CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp > CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i
+
+CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp -o CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s
+
+CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.requires:
+.PHONY : CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.requires
+
+CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.provides: CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.requires
+	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.provides.build
+.PHONY : CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.provides
+
+CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.provides.build: CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o
+
 # Object files for target car-detector
 car__detector_OBJECTS = \
 "CMakeFiles/car-detector.dir/src/car_tracker.cpp.o" \
 "CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o" \
-"CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o"
+"CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o" \
+"CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o"
 
 # External object files for target car-detector
 car__detector_EXTERNAL_OBJECTS =
@@ -130,6 +154,7 @@ car__detector_EXTERNAL_OBJECTS =
 car-detector: CMakeFiles/car-detector.dir/src/car_tracker.cpp.o
 car-detector: CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o
 car-detector: CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o
+car-detector: CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o
 car-detector: CMakeFiles/car-detector.dir/build.make
 car-detector: /usr/local/lib/libopencv_videostab.2.4.11.dylib
 car-detector: /usr/local/lib/libopencv_ts.a
@@ -161,6 +186,7 @@ CMakeFiles/car-detector.dir/build: car-detector
 CMakeFiles/car-detector.dir/requires: CMakeFiles/car-detector.dir/src/car_tracker.cpp.o.requires
 CMakeFiles/car-detector.dir/requires: CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o.requires
 CMakeFiles/car-detector.dir/requires: CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o.requires
+CMakeFiles/car-detector.dir/requires: CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.requires
 .PHONY : CMakeFiles/car-detector.dir/requires
 
 CMakeFiles/car-detector.dir/clean:
