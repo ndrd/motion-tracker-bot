@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<videoFilename>data/output.mp4</videoFilename>
+<debug>1</debug>
+<configured>1</configured>
+<l1p1x>46</l1p1x>
+<l1p1y>17</l1p1y>
+<l1p2x>31</l1p2x>
+<l1p2y>300</l1p2y>
+<l2p1x>150</l2p1x>
+<l2p1y>0</l2p1y>
+<l2p2x>263</l2p2x>
+<l2p2y>0</l2p2y>
+<l3p1x>12</l3p1x>
+<l3p1y>34</l3p1y>
+<l3p2x>12</l3p2x>
+<l3p2y>134</l3p2y>
+</opencv_storage>

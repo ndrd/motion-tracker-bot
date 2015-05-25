@@ -47,6 +47,10 @@ cvblob.h
 /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp
 MotionTracker.hpp
 /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
+string
+-
+iostream
+-
 
 /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
 iostream

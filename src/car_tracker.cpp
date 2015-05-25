@@ -40,12 +40,16 @@ int main(int argc, const char* argv[])
 
 
  string fileName = argv[1]; 
+ cout << fileName << endl;
  VideoCapture stream1(fileName);   //0 is the id of video device.0 if you have only one camera     
   
  Mat element = getStructuringElement(MORPH_RECT, Size(3, 3), Point(1,1) );     
  Mat img_mask;
 
- tracker->init();
+// we need a first frame to configure points if not defined
+stream1.read(frame);
+
+tracker->init(frame, fileName);
 
  //unconditional loop     
  while (true) {     

@@ -1,41 +1,55 @@
 #include "MotionTracker.hpp"
+#include <string>
+#include <iostream>
 
 namespace Position 
 {
+	Mat img1;
+	Mat img2;
+
 	IplImage* img_input1 = 0;
 	IplImage* img_input2 = 0;
 	
+	//line start
 	Point p1;
 	Point p2;
-	Point p3;
-	Point p4;	
 
-	int startDraw = 0;
+	//line end
+	Point p3;
+	Point p4;
+
+	//line half
+	Point p5;
+	Point p6;	
+
+	bool startDraw = false;
+	bool l1Defined =  false;
+	bool l2Defined = false;
+	int linesDrawed = 0;
 	bool configured = false;
+	string videoFilename =  "";
 
 	void firstLine_on_mouse(int evt, int x, int y, int flag, void* param)
 	{
-		if ( evt == CV_EVENT_LBUTTONDOWN)
+		if (evt == CV_EVENT_LBUTTONDOWN && !startDraw)
 		{
+			cout << "down&start" << endl;
 			if (!startDraw)
 			{
 				p1 = Point(x,y);
-				startDraw = 1;
+				startDraw = true;
 			}
 			else 
 			{
 				p2 = Point(x,y);
-				startDraw = 0;
 			}
 		}
 
 		if (evt == CV_EVENT_LBUTTONDOWN && startDraw)
 		{
-			img_input2 = cvCloneImage(img_input1);
-			cvLine(img_input2, p1, p2, CV_RGB(255,0,255));
-			cvShowImage("Object counting", img_input2);
-			cvReleaseImage(&img_input2);
-			startDraw = 0;
+			cout << "down&end" << endl;
+			line(img1, p1, p2, CV_RGB(255,0,0));
+			l1Defined = true;
 		}
 	}
 
@@ -46,34 +60,68 @@ namespace Position
 			if (!startDraw)
 			{
 				p3 = Point(x,y);
-				startDraw = 1;
+				startDraw = true;
 			}
 			else 
 			{
 				p4 = Point(x,y);
-				startDraw = 0;
 			}
 		}
 
 		if (evt == CV_EVENT_LBUTTONDOWN && startDraw)
 		{
-			img_input2 = cvCloneImage(img_input1);
-			cvLine(img_input2, p1, p2, CV_RGB(255,0,255));
-			cvShowImage("Object counting", img_input2);
-			cvReleaseImage(&img_input2);
+			line(img1, p1, p2, CV_RGB(255,0,255));
+			l2Defined = true;
 		}
 	}
 }
 
 
-MotionTracker::MotionTracker(): configured(false), objectFromStartToEnd(0), objectFromEndToStart(0)
+MotionTracker::MotionTracker(): objectFromStartToEnd(0), objectFromEndToStart(0)
 {
   std::cout << "MotionTracker()" << std::endl;
 }
 
-void MotionTracker::init()
+void MotionTracker::init(const Mat &img, string filename)
 {
+	img_input = img;
+
+	if ( img_input.empty() )
+		return;
+
 	loadConfig();
+
+	Position::configured = (filename.compare(Position::videoFilename) == 0);
+
+	if (!Position::configured)
+	{
+		Position::videoFilename = filename;
+
+		int key  = 0;
+		Position::img1 = img_input;
+
+		do
+		{
+			if (!Position::l1Defined)
+			{
+				cv::imshow("Draw start line", img_input);
+				cvSetMouseCallback("Draw start line", Position::firstLine_on_mouse, NULL);
+				key = cvWaitKey(0);
+
+			} 
+			else 
+			{
+				cv::imshow("Draw end line", img_input);
+				cvSetMouseCallback("Draw end line", Position::secondLine_on_mouse, NULL);
+				key = cvWaitKey(0);
+			}
+
+
+		} while(!Position::l1Defined || !Position::l2Defined) ;
+	}
+
+	saveConfig();
+
 }
 
 void MotionTracker::setImageBlob(const cv::Mat &i)
@@ -128,19 +176,40 @@ void MotionTracker::detect()
 
   	if ( !Position::configured )
   		loadConfig();
+  	else
+  	{
+  		line(img_input, Position::p1, Position::p2, CV_RGB(255,0,255));
+  		line(img_input, Position::p3, Position::p4, CV_RGB(255,255,0));
+
+  		imshow("MotionTracker", img_input);
+  	}
 }
 
 void MotionTracker::saveConfig()
 {
   CvFileStorage* fs = cvOpenFileStorage("config/MotionTracker.xml", 0, CV_STORAGE_WRITE);
 
+  cvWriteString(fs, "videoFilename", Position::videoFilename.c_str());
+
   cvWriteInt(fs, "debug", debug);  
   cvWriteInt(fs, "configured", Position::configured);
+  //line start
   cvWriteInt(fs, "l1p1x", Position::p1.x);
   cvWriteInt(fs, "l1p1y", Position::p1.y);
   cvWriteInt(fs, "l1p2x", Position::p2.x);
   cvWriteInt(fs, "l1p2y", Position::p2.y);
-  
+  //line end
+  cvWriteInt(fs, "l2p1x", Position::p3.x);
+  cvWriteInt(fs, "l2p1y", Position::p3.y);
+  cvWriteInt(fs, "l2p2x", Position::p4.x);
+  cvWriteInt(fs, "l2p2y", Position::p4.y);
+  //half line
+  cvWriteInt(fs, "l3p1x", Position::p5.x);
+  cvWriteInt(fs, "l3p1y", Position::p5.y);
+  cvWriteInt(fs, "l3p2x", Position::p6.x);
+  cvWriteInt(fs, "l3p2y", Position::p6.y);
+
+
   cvReleaseFileStorage(&fs);
 }
 
@@ -150,7 +219,22 @@ void MotionTracker::loadConfig()
 
   debug = cvReadIntByName(fs, 0, "debug", true);
   Position::configured = cvReadIntByName(fs, 0, "configured", 1);
-  Position
-  
+  Position::videoFilename = cvReadStringByName(fs, 0, "videoFilename", "");
+  // read the first line
+  Position::p1.x = cvReadIntByName(fs, 0,  "l1p1x", 0);
+  Position::p1.y = cvReadIntByName(fs, 0,  "l1p1y", 0);
+  Position::p2.x = cvReadIntByName(fs, 0,  "l1p2x", 0);
+  Position::p2.y = cvReadIntByName(fs, 0,  "l1p2y", 0);
+  // read the second line
+  Position::p3.x = cvReadIntByName(fs, 0,  "l2p1x", 0);
+  Position::p3.y = cvReadIntByName(fs, 0,  "l2p1y", 0);
+  Position::p4.x = cvReadIntByName(fs, 0,  "l2p2x", 0);
+  Position::p5.y = cvReadIntByName(fs, 0,  "l2p2y", 0);
+  // read the half line
+  Position::p5.x = cvReadIntByName(fs, 0,  "l3p1x", 0);
+  Position::p5.y = cvReadIntByName(fs, 0,  "l3p1y", 0);
+  Position::p6.x = cvReadIntByName(fs, 0,  "l3p2x", 0);
+  Position::p6.y = cvReadIntByName(fs, 0,  "l3p2y", 0);
+
   cvReleaseFileStorage(&fs);
 }

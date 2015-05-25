@@ -33,7 +33,6 @@ enum ObjectPosition
 class MotionTracker
 {
 	private:
-		bool configured;
 		bool debug;
 		int img_w;
 		int img_h;
@@ -48,6 +47,7 @@ class MotionTracker
 	public:
 		MotionTracker();
 		
+		void init (const Mat &img, string filename);
 		void setImageBlob( const Mat &img );
 		void setTracks( const CvTracks &tracks );
 		void detect();
