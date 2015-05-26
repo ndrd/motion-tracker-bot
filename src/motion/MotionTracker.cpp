@@ -100,7 +100,7 @@ void MotionTracker::init(const Mat &img, string filename)
 	if ( img_input.empty() )
 		return;
 
-	loadConfig();
+	loadConfig(filename);
 
 	Position::configured = (filename.compare(Position::videoFilename) == 0);
 
@@ -149,7 +149,7 @@ void MotionTracker::init(const Mat &img, string filename)
 		cout << "orientation " << orientation << endl;
 
 		Position::configured =  true;
-		saveConfig();
+		saveConfig(filename);
 
 	}
 
@@ -200,7 +200,7 @@ void MotionTracker::detect(Mat &img_input, long &frame, const long &fps)
   	img_h = img_input.size().height;
 
   	if ( !Position::configured )
-  		loadConfig();
+  		loadConfig(Position::videoFilename);
 	/* track blobs */  	
 
   for(std::map<cvb::CvID,cvb::CvTrack*>::iterator it = tracks.begin() ; it != tracks.end(); it++)
@@ -219,56 +219,62 @@ void MotionTracker::detect(Mat &img_input, long &frame, const long &fps)
 	imshow("MotionTracker", img_input);
 }
 
-void MotionTracker::saveConfig()
+void MotionTracker::saveConfig(string name)
 {
-  CvFileStorage* fs = cvOpenFileStorage("config/MotionTracker.xml", 0, CV_STORAGE_WRITE);
+	string fn = "config/name.xml";
+	cout << fn.c_str() << endl;
 
-  cvWriteString(fs, "videoFilename", Position::videoFilename.c_str());
+	CvFileStorage* fs = cvOpenFileStorage(fn.c_str(), 0, CV_STORAGE_WRITE);
 
-  cvWriteInt(fs, "debug", debug);  
-  cvWriteInt(fs, "configured", Position::configured);
-  //line start
-  cvWriteInt(fs, "l1p1x", Position::p1.x);
-  cvWriteInt(fs, "l1p1y", Position::p1.y);
-  cvWriteInt(fs, "l1p2x", Position::p2.x);
-  cvWriteInt(fs, "l1p2y", Position::p2.y);
-  //line end
-  cvWriteInt(fs, "l2p1x", Position::p3.x);
-  cvWriteInt(fs, "l2p1y", Position::p3.y);
-  cvWriteInt(fs, "l2p2x", Position::p4.x);
-  cvWriteInt(fs, "l2p2y", Position::p4.y);
-  //half line
-  cvWriteInt(fs, "l3p1x", Position::p5.x);
-  cvWriteInt(fs, "l3p1y", Position::p5.y);
-  cvWriteInt(fs, "l3p2x", Position::p6.x);
-  cvWriteInt(fs, "l3p2y", Position::p6.y);
+	cvWriteString(fs, "videoFilename", Position::videoFilename.c_str());
+
+	cvWriteInt(fs, "debug", debug);  
+	cvWriteInt(fs, "configured", Position::configured);
+	//line start
+	cvWriteInt(fs, "l1p1x", Position::p1.x);
+	cvWriteInt(fs, "l1p1y", Position::p1.y);
+	cvWriteInt(fs, "l1p2x", Position::p2.x);
+	cvWriteInt(fs, "l1p2y", Position::p2.y);
+	//line end
+	cvWriteInt(fs, "l2p1x", Position::p3.x);
+	cvWriteInt(fs, "l2p1y", Position::p3.y);
+	cvWriteInt(fs, "l2p2x", Position::p4.x);
+	cvWriteInt(fs, "l2p2y", Position::p4.y);
+	//half line
+	cvWriteInt(fs, "l3p1x", Position::p5.x);
+	cvWriteInt(fs, "l3p1y", Position::p5.y);
+	cvWriteInt(fs, "l3p2x", Position::p6.x);
+	cvWriteInt(fs, "l3p2y", Position::p6.y);
 
 
-  cvReleaseFileStorage(&fs);
+	cvReleaseFileStorage(&fs);
 }
 
-void MotionTracker::loadConfig()
+void MotionTracker::loadConfig(string name)
 {
-  CvFileStorage* fs = cvOpenFileStorage("config/MotionTracker.xml", 0, CV_STORAGE_READ);
+	string fn = "config/" + name + ".xml";
+	cout << fn.c_str() << endl;
 
-  debug = cvReadIntByName(fs, 0, "debug", true);
-  Position::configured = cvReadIntByName(fs, 0, "configured", 1);
-  Position::videoFilename = cvReadStringByName(fs, 0, "videoFilename", "");
-  // read the first line
-  Position::p1.x = cvReadIntByName(fs, 0,  "l1p1x", 0);
-  Position::p1.y = cvReadIntByName(fs, 0,  "l1p1y", 0);
-  Position::p2.x = cvReadIntByName(fs, 0,  "l1p2x", 0);
-  Position::p2.y = cvReadIntByName(fs, 0,  "l1p2y", 0);
-  // read the second line
-  Position::p3.x = cvReadIntByName(fs, 0,  "l2p1x", 0);
-  Position::p3.y = cvReadIntByName(fs, 0,  "l2p1y", 0);
-  Position::p4.x = cvReadIntByName(fs, 0,  "l2p2x", 0);
-  Position::p4.y = cvReadIntByName(fs, 0,  "l2p2y", 0);
-  // read the half line
-  Position::p5.x = cvReadIntByName(fs, 0,  "l3p1x", 0);
-  Position::p5.y = cvReadIntByName(fs, 0,  "l3p1y", 0);
-  Position::p6.x = cvReadIntByName(fs, 0,  "l3p2x", 0);
-  Position::p6.y = cvReadIntByName(fs, 0,  "l3p2y", 0);
+	CvFileStorage* fs = cvOpenFileStorage(fn.c_str(), 0, CV_STORAGE_READ);
 
-  cvReleaseFileStorage(&fs);
+	debug = cvReadIntByName(fs, 0, "debug", true);
+	Position::configured = cvReadIntByName(fs, 0, "configured", 1);
+	Position::videoFilename = cvReadStringByName(fs, 0, "videoFilename", "");
+	// read the first line
+	Position::p1.x = cvReadIntByName(fs, 0,  "l1p1x", 0);
+	Position::p1.y = cvReadIntByName(fs, 0,  "l1p1y", 0);
+	Position::p2.x = cvReadIntByName(fs, 0,  "l1p2x", 0);
+	Position::p2.y = cvReadIntByName(fs, 0,  "l1p2y", 0);
+	// read the second line
+	Position::p3.x = cvReadIntByName(fs, 0,  "l2p1x", 0);
+	Position::p3.y = cvReadIntByName(fs, 0,  "l2p1y", 0);
+	Position::p4.x = cvReadIntByName(fs, 0,  "l2p2x", 0);
+	Position::p4.y = cvReadIntByName(fs, 0,  "l2p2y", 0);
+	// read the half line
+	Position::p5.x = cvReadIntByName(fs, 0,  "l3p1x", 0);
+	Position::p5.y = cvReadIntByName(fs, 0,  "l3p1y", 0);
+	Position::p6.x = cvReadIntByName(fs, 0,  "l3p2x", 0);
+	Position::p6.y = cvReadIntByName(fs, 0,  "l3p2y", 0);
+
+	cvReleaseFileStorage(&fs);
 }

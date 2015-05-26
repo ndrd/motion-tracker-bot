@@ -54,7 +54,7 @@ class MotionTracker
 	private:
 		ObjectPosition getObjectPosition(const CvPoint2D64f centroid);
 
-		void saveConfig();
-		void loadConfig();
+		void saveConfig(const string name);
+		void loadConfig(const string name);
 
 };

@@ -16,7 +16,7 @@ using namespace std;
 int main(int argc, const char* argv[])  
 {  
 
-	const int MAX_SIZE = 500;
+	const int MAX_SIZE = 400;
   
 	 //global variables  
 	 Mat frame; //current frame  
@@ -24,7 +24,7 @@ int main(int argc, const char* argv[])
   
   
 	 Ptr<BackgroundSubtractor> pMOG; //MOG Background subtractor  
-	 pMOG = new BackgroundSubtractorMOG();  
+	 pMOG = new BackgroundSubtractorMOG2();  
 
 	  /* Blob Tracking Algorithm */
 	  Mat  img_blob; 
@@ -45,7 +45,7 @@ int main(int argc, const char* argv[])
 
   // we need a first frame to configure points if not defined
   stream1.read(frame);
-  bool mustResize = ((frame.size().width/2) > MAX_SIZE) ? 1 : 0;
+  bool mustResize = ((frame.size().width) > MAX_SIZE) ? 1 : 0;
 
   tracker->init(frame, fileName);
   double fps = stream1.get(CV_CAP_PROP_FPS);
