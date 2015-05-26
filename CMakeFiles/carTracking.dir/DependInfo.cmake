@@ -5,10 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/ndrd/Projects/motion-tracker-bot/src/CarTracking.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/carTracking.dir/src/CarTracking.cpp.o"
-  "/Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o"
   "/Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o"
-  "/Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PBAS.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o"
-  "/Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o"
   "/Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

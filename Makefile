@@ -138,30 +138,6 @@ src/CarTracking.cpp.s:
 	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/CarTracking.cpp.s
 .PHONY : src/CarTracking.cpp.s
 
-src/detector/VehicleCouting.o: src/detector/VehicleCouting.cpp.o
-.PHONY : src/detector/VehicleCouting.o
-
-# target to build an object file
-src/detector/VehicleCouting.cpp.o:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o
-.PHONY : src/detector/VehicleCouting.cpp.o
-
-src/detector/VehicleCouting.i: src/detector/VehicleCouting.cpp.i
-.PHONY : src/detector/VehicleCouting.i
-
-# target to preprocess a source file
-src/detector/VehicleCouting.cpp.i:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.i
-.PHONY : src/detector/VehicleCouting.cpp.i
-
-src/detector/VehicleCouting.s: src/detector/VehicleCouting.cpp.s
-.PHONY : src/detector/VehicleCouting.s
-
-# target to generate assembly for a file
-src/detector/VehicleCouting.cpp.s:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.s
-.PHONY : src/detector/VehicleCouting.cpp.s
-
 src/motion/MotionTracker.o: src/motion/MotionTracker.cpp.o
 .PHONY : src/motion/MotionTracker.o
 
@@ -185,54 +161,6 @@ src/motion/MotionTracker.s: src/motion/MotionTracker.cpp.s
 src/motion/MotionTracker.cpp.s:
 	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.s
 .PHONY : src/motion/MotionTracker.cpp.s
-
-src/package_bgs/PBAS/PBAS.o: src/package_bgs/PBAS/PBAS.cpp.o
-.PHONY : src/package_bgs/PBAS/PBAS.o
-
-# target to build an object file
-src/package_bgs/PBAS/PBAS.cpp.o:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o
-.PHONY : src/package_bgs/PBAS/PBAS.cpp.o
-
-src/package_bgs/PBAS/PBAS.i: src/package_bgs/PBAS/PBAS.cpp.i
-.PHONY : src/package_bgs/PBAS/PBAS.i
-
-# target to preprocess a source file
-src/package_bgs/PBAS/PBAS.cpp.i:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.i
-.PHONY : src/package_bgs/PBAS/PBAS.cpp.i
-
-src/package_bgs/PBAS/PBAS.s: src/package_bgs/PBAS/PBAS.cpp.s
-.PHONY : src/package_bgs/PBAS/PBAS.s
-
-# target to generate assembly for a file
-src/package_bgs/PBAS/PBAS.cpp.s:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.s
-.PHONY : src/package_bgs/PBAS/PBAS.cpp.s
-
-src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.o: src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
-.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.o
-
-# target to build an object file
-src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
-.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
-
-src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.i: src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i
-.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.i
-
-# target to preprocess a source file
-src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i
-.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i
-
-src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.s: src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s
-.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.s
-
-# target to generate assembly for a file
-src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s:
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s
-.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s
 
 src/tracker/BlobTracking.o: src/tracker/BlobTracking.cpp.o
 .PHONY : src/tracker/BlobTracking.o
@@ -270,18 +198,9 @@ help:
 	@echo "... src/CarTracking.o"
 	@echo "... src/CarTracking.i"
 	@echo "... src/CarTracking.s"
-	@echo "... src/detector/VehicleCouting.o"
-	@echo "... src/detector/VehicleCouting.i"
-	@echo "... src/detector/VehicleCouting.s"
 	@echo "... src/motion/MotionTracker.o"
 	@echo "... src/motion/MotionTracker.i"
 	@echo "... src/motion/MotionTracker.s"
-	@echo "... src/package_bgs/PBAS/PBAS.o"
-	@echo "... src/package_bgs/PBAS/PBAS.i"
-	@echo "... src/package_bgs/PBAS/PBAS.s"
-	@echo "... src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.o"
-	@echo "... src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.i"
-	@echo "... src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.s"
 	@echo "... src/tracker/BlobTracking.o"
 	@echo "... src/tracker/BlobTracking.i"
 	@echo "... src/tracker/BlobTracking.s"

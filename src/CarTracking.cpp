@@ -4,10 +4,7 @@
 #include "opencv2/highgui/highgui.hpp"  
 #include "opencv2/video/background_segm.hpp"
 #include "tracker/BlobTracking.hpp"  
-#include "detector/VehicleCouting.h"  
-#include "package_bgs/IBGS.h"  
 #include "motion/MotionTracker.hpp"  
-#include "package_bgs/PBAS/PixelBasedAdaptiveSegmenter.h"  
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/video/video.hpp"
 
@@ -33,15 +30,6 @@ int main(int argc, const char* argv[])
 	  Mat  img_blob; 
 	  BlobTracking* blobTracking;
 	  blobTracking = new BlobTracking;
-
-	  /* Background Subtraction Algorithm */
-	  IBGS *bgs;
-	  bgs = new PixelBasedAdaptiveSegmenter;
-
-
-	  /* Vehicle Counting Algorithm */
-	  VehicleCouting* vehicleCouting;
-	  vehicleCouting = new VehicleCouting;
 
 	  /* Motion detector */
 	  MotionTracker* tracker;
@@ -82,7 +70,8 @@ int main(int argc, const char* argv[])
   if ( !fgMaskMOG.empty())
   {
 	blobTracking->process(frame, fgMaskMOG, img_blob);
-	tracker->detect(frame, blobTracking->getTracks(), frames, fps);
+	tracker->setTracks(blobTracking->getTracks());
+	tracker->detect(frame,frames, fps);
 
   }
   

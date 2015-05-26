@@ -135,17 +135,30 @@ void MotionTracker::init(const Mat &img, string filename)
 
 		} while(1) ;
 
-		Position::configured =  true;
-		//	destroyWindow("Draw start line");
+		// half line
+		Position::p5.x = (int) (Position::p1.x + Position::p3.x) / 2.0;
+		Position::p5.y = (int) (Position::p1.y + Position::p3.y) / 2.0;
+		Position::p6.x = (int) (Position::p2.x + Position::p4.x) / 2.0;
+		Position::p6.y = (int) (Position::p2.y + Position::p4.y) / 2.0;
 
+		if (abs(Position::p1.x - Position::p2.x) > abs(Position::p1.y - Position::p2.y))
+			orientation = HORIZONTAL;
+		else
+			orientation = VERTICAL;
+
+		cout << "orientation " << orientation << endl;
+
+		Position::configured =  true;
 		saveConfig();
 
 	}
-	loadConfig();
-
 
 }
 
+void MotionTracker::setTracks(const CvTracks &t)
+{
+	tracks = t;
+}
 
 ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 {
@@ -178,7 +191,7 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 	return position;
 }
 
-void MotionTracker::detect(Mat &img_input,const CvTracks &tracks, long &frame, const long &fps)
+void MotionTracker::detect(Mat &img_input, long &frame, const long &fps)
 {
 	if ( img_input.empty() )
 		return;
@@ -188,14 +201,22 @@ void MotionTracker::detect(Mat &img_input,const CvTracks &tracks, long &frame, c
 
   	if ( !Position::configured )
   		loadConfig();
-  	else
-  	{
-  		line(img_input, Position::p1, Position::p2, CV_RGB(255,0,255));
-  		line(img_input, Position::p3, Position::p4, CV_RGB(255,255,0));
-  		line(img_input, Position::p5, Position::p6, CV_RGB(255,255,0));
+	/* track blobs */  	
 
-  		imshow("MotionTracker", img_input);
-  	}
+  for(std::map<cvb::CvID,cvb::CvTrack*>::iterator it = tracks.begin() ; it != tracks.end(); it++)
+	{
+		CvID id = (*it).first;
+		CvTrack* track = (*it).second;
+
+		CvPoint2D64f centroid  = track->centroid;
+	}
+
+  	/* show lines */
+	line(img_input, Position::p1, Position::p2, CV_RGB(255,0,0));
+	line(img_input, Position::p3, Position::p4, CV_RGB(0,255,0));
+	line(img_input, Position::p5, Position::p6, CV_RGB(255,0,255));
+
+	imshow("MotionTracker", img_input);
 }
 
 void MotionTracker::saveConfig()

@@ -95,32 +95,9 @@ CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o.provides: CMakeFiles/c
 
 CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o.provides.build: CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o
 
-CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o: CMakeFiles/carTracking.dir/flags.make
-CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o: src/detector/VehicleCouting.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp
-
-CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp > CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.i
-
-CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp -o CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.s
-
-CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.requires:
-.PHONY : CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.requires
-
-CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.provides: CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.requires
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.provides.build
-.PHONY : CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.provides
-
-CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.provides.build: CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o
-
 CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o: CMakeFiles/carTracking.dir/flags.make
 CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o: src/motion/MotionTracker.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.cpp
 
@@ -141,70 +118,18 @@ CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o.provides: CMakeFiles/c
 
 CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o.provides.build: CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o
 
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o: CMakeFiles/carTracking.dir/flags.make
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o: src/package_bgs/PBAS/PBAS.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PBAS.cpp
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PBAS.cpp > CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.i
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PBAS.cpp -o CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.s
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.requires:
-.PHONY : CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.requires
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.provides: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.requires
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.provides.build
-.PHONY : CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.provides
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.provides.build: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o: CMakeFiles/carTracking.dir/flags.make
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o: src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp > CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/motion-tracker-bot/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp -o CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.requires:
-.PHONY : CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.requires
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.provides: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.requires
-	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.provides.build
-.PHONY : CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.provides
-
-CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.provides.build: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
-
 # Object files for target carTracking
 carTracking_OBJECTS = \
 "CMakeFiles/carTracking.dir/src/CarTracking.cpp.o" \
 "CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o" \
-"CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o" \
-"CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o" \
-"CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o" \
-"CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o"
+"CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o"
 
 # External object files for target carTracking
 carTracking_EXTERNAL_OBJECTS =
 
 carTracking: CMakeFiles/carTracking.dir/src/CarTracking.cpp.o
 carTracking: CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o
-carTracking: CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o
 carTracking: CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o
-carTracking: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o
-carTracking: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
 carTracking: CMakeFiles/carTracking.dir/build.make
 carTracking: /usr/local/lib/libopencv_videostab.2.4.11.dylib
 carTracking: /usr/local/lib/libopencv_ts.a
@@ -235,10 +160,7 @@ CMakeFiles/carTracking.dir/build: carTracking
 
 CMakeFiles/carTracking.dir/requires: CMakeFiles/carTracking.dir/src/CarTracking.cpp.o.requires
 CMakeFiles/carTracking.dir/requires: CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o.requires
-CMakeFiles/carTracking.dir/requires: CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o.requires
 CMakeFiles/carTracking.dir/requires: CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o.requires
-CMakeFiles/carTracking.dir/requires: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o.requires
-CMakeFiles/carTracking.dir/requires: CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o.requires
 .PHONY : CMakeFiles/carTracking.dir/requires
 
 CMakeFiles/carTracking.dir/clean:
