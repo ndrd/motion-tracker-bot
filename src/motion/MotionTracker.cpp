@@ -31,49 +31,60 @@ namespace Position
 
 	void firstLine_on_mouse(int evt, int x, int y, int flag, void* param)
 	{
-		if (evt == CV_EVENT_LBUTTONDOWN && !startDraw)
+		if (evt == CV_EVENT_LBUTTONDOWN)
 		{
-			cout << "down&start" << endl;
 			if (!startDraw)
 			{
-				p1 = Point(x,y);
+				cout << "starting " << x << " , " << y << endl; 
+				p1.x = x;
+				p1.y = y;
 				startDraw = true;
 			}
 			else 
 			{
-				p2 = Point(x,y);
+				p2.x = x;
+				p2.y = y;
+				startDraw = false;
+				l1Defined = true;
+
 			}
 		}
 
 		if (evt == CV_EVENT_LBUTTONDOWN && startDraw)
 		{
-			cout << "down&end" << endl;
+			cout << "end " << x << " , " << y << endl; 
 			line(img1, p1, p2, CV_RGB(255,0,0));
-			l1Defined = true;
 		}
 	}
 
 	void secondLine_on_mouse(int evt, int x, int y, int flag, void* param)
 	{
-		if ( evt == CV_EVENT_LBUTTONDOWN)
+		if (evt == CV_EVENT_LBUTTONDOWN)
 		{
 			if (!startDraw)
 			{
-				p3 = Point(x,y);
+				cout << "starting " << x << " , " << y << endl; 
+				p3.x = x;
+				p3.y = y;
 				startDraw = true;
 			}
 			else 
 			{
-				p4 = Point(x,y);
+				p4.x = x;
+				p4.y = y;
+				startDraw = false;
+				l2Defined = true;
+
 			}
 		}
 
 		if (evt == CV_EVENT_LBUTTONDOWN && startDraw)
 		{
-			line(img1, p1, p2, CV_RGB(255,0,255));
-			l2Defined = true;
+			cout << "end " << x << " , " << y << endl; 
+			line(img1, p3, p4, CV_RGB(0,255,0));
 		}
 	}
+
 }
 
 
@@ -102,38 +113,39 @@ void MotionTracker::init(const Mat &img, string filename)
 
 		do
 		{
-			if (!Position::l1Defined)
-			{
-				cv::imshow("Draw start line", img_input);
-				cvSetMouseCallback("Draw start line", Position::firstLine_on_mouse, NULL);
-				key = cvWaitKey(0);
+			cv::imshow("Draw start line", Position::img1);
+			cvSetMouseCallback("Draw start line", Position::firstLine_on_mouse, NULL);
+  			key = cvWaitKey(0);
 
-			} 
-			else 
-			{
-				cv::imshow("Draw end line", img_input);
-				cvSetMouseCallback("Draw end line", Position::secondLine_on_mouse, NULL);
-				key = cvWaitKey(0);
-			}
+  			if (Position::l1Defined) 
+				break;
+			
 
+		} while(1) ;
 
-		} while(!Position::l1Defined || !Position::l2Defined) ;
+		do
+		{
+			cv::imshow("Draw start line", Position::img1);
+			cvSetMouseCallback("Draw start line", Position::secondLine_on_mouse, NULL);
+  			key = cvWaitKey(0);
+
+  			if (Position::l2Defined) 
+				break;
+			
+
+		} while(1) ;
+
+		Position::configured =  true;
+		//	destroyWindow("Draw start line");
+
+		saveConfig();
+
 	}
+	loadConfig();
 
-	saveConfig();
-
-}
-
-void MotionTracker::setImageBlob(const cv::Mat &i)
-{
-  img_input = i;
 
 }
 
-void MotionTracker::setTracks(const cvb::CvTracks &t)
-{
-  tracks = t;
-}
 
 ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 {
@@ -166,7 +178,7 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 	return position;
 }
 
-void MotionTracker::detect()
+void MotionTracker::detect(Mat &img_input,const CvTracks &tracks, long &frame, const long &fps)
 {
 	if ( img_input.empty() )
 		return;
@@ -180,6 +192,7 @@ void MotionTracker::detect()
   	{
   		line(img_input, Position::p1, Position::p2, CV_RGB(255,0,255));
   		line(img_input, Position::p3, Position::p4, CV_RGB(255,255,0));
+  		line(img_input, Position::p5, Position::p6, CV_RGB(255,255,0));
 
   		imshow("MotionTracker", img_input);
   	}
@@ -229,7 +242,7 @@ void MotionTracker::loadConfig()
   Position::p3.x = cvReadIntByName(fs, 0,  "l2p1x", 0);
   Position::p3.y = cvReadIntByName(fs, 0,  "l2p1y", 0);
   Position::p4.x = cvReadIntByName(fs, 0,  "l2p2x", 0);
-  Position::p5.y = cvReadIntByName(fs, 0,  "l2p2y", 0);
+  Position::p4.y = cvReadIntByName(fs, 0,  "l2p2y", 0);
   // read the half line
   Position::p5.x = cvReadIntByName(fs, 0,  "l3p1x", 0);
   Position::p5.y = cvReadIntByName(fs, 0,  "l3p1y", 0);

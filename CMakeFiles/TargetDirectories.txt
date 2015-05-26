@@ -1,1 +1,1 @@
-/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir
+/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/carTracking.dir

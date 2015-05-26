@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/car_tracker.cpp.o"
-  "/Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o"
-  "/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o"
-  "/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp" "/Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o"
+  "/Users/ndrd/Projects/motion-tracker-bot/src/car_tracker.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/car-detector.dir/src/car_tracker.cpp.o"
+  "/Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o"
+  "/Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o"
+  "/Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.cpp" "/Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

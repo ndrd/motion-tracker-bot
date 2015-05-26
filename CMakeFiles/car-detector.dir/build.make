@@ -35,10 +35,10 @@ RM = /usr/local/Cellar/cmake/3.2.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ndrd/Projects/tripping-ninja
+CMAKE_SOURCE_DIR = /Users/ndrd/Projects/motion-tracker-bot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ndrd/Projects/tripping-ninja
+CMAKE_BINARY_DIR = /Users/ndrd/Projects/motion-tracker-bot
 
 # Include any dependencies generated for this target.
 include CMakeFiles/car-detector.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/car-detector.dir/flags.make
 
 CMakeFiles/car-detector.dir/src/car_tracker.cpp.o: CMakeFiles/car-detector.dir/flags.make
 CMakeFiles/car-detector.dir/src/car_tracker.cpp.o: src/car_tracker.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/car-detector.dir/src/car_tracker.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/car_tracker.cpp.o -c /Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/car_tracker.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/car_tracker.cpp
 
 CMakeFiles/car-detector.dir/src/car_tracker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/car-detector.dir/src/car_tracker.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp > CMakeFiles/car-detector.dir/src/car_tracker.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/motion-tracker-bot/src/car_tracker.cpp > CMakeFiles/car-detector.dir/src/car_tracker.cpp.i
 
 CMakeFiles/car-detector.dir/src/car_tracker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/car-detector.dir/src/car_tracker.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp -o CMakeFiles/car-detector.dir/src/car_tracker.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/motion-tracker-bot/src/car_tracker.cpp -o CMakeFiles/car-detector.dir/src/car_tracker.cpp.s
 
 CMakeFiles/car-detector.dir/src/car_tracker.cpp.o.requires:
 .PHONY : CMakeFiles/car-detector.dir/src/car_tracker.cpp.o.requires
@@ -74,17 +74,17 @@ CMakeFiles/car-detector.dir/src/car_tracker.cpp.o.provides.build: CMakeFiles/car
 
 CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o: CMakeFiles/car-detector.dir/flags.make
 CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o: src/tracker/BlobTracking.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o -c /Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.cpp
 
 CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp > CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.cpp > CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.i
 
 CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp -o CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.cpp -o CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.s
 
 CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o.requires:
 .PHONY : CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o.requires
@@ -97,17 +97,17 @@ CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o.provides.build: CMake
 
 CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o: CMakeFiles/car-detector.dir/flags.make
 CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o: src/detector/VehicleCouting.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o -c /Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp
 
 CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.cpp > CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp > CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.i
 
 CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.cpp -o CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp -o CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.s
 
 CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o.requires:
 .PHONY : CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o.requires
@@ -120,17 +120,17 @@ CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o.provides.build: CM
 
 CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o: CMakeFiles/car-detector.dir/flags.make
 CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o: src/motion/MotionTracker.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o -c /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o -c /Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.cpp
 
 CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp > CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.cpp > CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i
 
 CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp -o CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.cpp -o CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s
 
 CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.requires:
 .PHONY : CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o.requires
@@ -194,6 +194,6 @@ CMakeFiles/car-detector.dir/clean:
 .PHONY : CMakeFiles/car-detector.dir/clean
 
 CMakeFiles/car-detector.dir/depend:
-	cd /Users/ndrd/Projects/tripping-ninja && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ndrd/Projects/tripping-ninja /Users/ndrd/Projects/tripping-ninja /Users/ndrd/Projects/tripping-ninja /Users/ndrd/Projects/tripping-ninja /Users/ndrd/Projects/tripping-ninja/CMakeFiles/car-detector.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/ndrd/Projects/motion-tracker-bot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ndrd/Projects/motion-tracker-bot /Users/ndrd/Projects/motion-tracker-bot /Users/ndrd/Projects/motion-tracker-bot /Users/ndrd/Projects/motion-tracker-bot /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/car-detector.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/car-detector.dir/depend
 

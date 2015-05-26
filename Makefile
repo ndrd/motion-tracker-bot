@@ -42,10 +42,10 @@ RM = /usr/local/Cellar/cmake/3.2.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ndrd/Projects/tripping-ninja
+CMAKE_SOURCE_DIR = /Users/ndrd/Projects/motion-tracker-bot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ndrd/Projects/tripping-ninja
+CMAKE_BINARY_DIR = /Users/ndrd/Projects/motion-tracker-bot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/tripping-ninja/CMakeFiles /Users/ndrd/Projects/tripping-ninja/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/tripping-ninja/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -102,48 +102,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named car-detector
+# Target rules for targets named carTracking
 
 # Build rule for target.
-car-detector: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 car-detector
-.PHONY : car-detector
+carTracking: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 carTracking
+.PHONY : carTracking
 
 # fast build rule for target.
-car-detector/fast:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/build
-.PHONY : car-detector/fast
+carTracking/fast:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/build
+.PHONY : carTracking/fast
 
-src/car_tracker.o: src/car_tracker.cpp.o
-.PHONY : src/car_tracker.o
+src/CarTracking.o: src/CarTracking.cpp.o
+.PHONY : src/CarTracking.o
 
 # target to build an object file
-src/car_tracker.cpp.o:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/car_tracker.cpp.o
-.PHONY : src/car_tracker.cpp.o
+src/CarTracking.cpp.o:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/CarTracking.cpp.o
+.PHONY : src/CarTracking.cpp.o
 
-src/car_tracker.i: src/car_tracker.cpp.i
-.PHONY : src/car_tracker.i
+src/CarTracking.i: src/CarTracking.cpp.i
+.PHONY : src/CarTracking.i
 
 # target to preprocess a source file
-src/car_tracker.cpp.i:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/car_tracker.cpp.i
-.PHONY : src/car_tracker.cpp.i
+src/CarTracking.cpp.i:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/CarTracking.cpp.i
+.PHONY : src/CarTracking.cpp.i
 
-src/car_tracker.s: src/car_tracker.cpp.s
-.PHONY : src/car_tracker.s
+src/CarTracking.s: src/CarTracking.cpp.s
+.PHONY : src/CarTracking.s
 
 # target to generate assembly for a file
-src/car_tracker.cpp.s:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/car_tracker.cpp.s
-.PHONY : src/car_tracker.cpp.s
+src/CarTracking.cpp.s:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/CarTracking.cpp.s
+.PHONY : src/CarTracking.cpp.s
 
 src/detector/VehicleCouting.o: src/detector/VehicleCouting.cpp.o
 .PHONY : src/detector/VehicleCouting.o
 
 # target to build an object file
 src/detector/VehicleCouting.cpp.o:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.o
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.o
 .PHONY : src/detector/VehicleCouting.cpp.o
 
 src/detector/VehicleCouting.i: src/detector/VehicleCouting.cpp.i
@@ -151,7 +151,7 @@ src/detector/VehicleCouting.i: src/detector/VehicleCouting.cpp.i
 
 # target to preprocess a source file
 src/detector/VehicleCouting.cpp.i:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.i
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.i
 .PHONY : src/detector/VehicleCouting.cpp.i
 
 src/detector/VehicleCouting.s: src/detector/VehicleCouting.cpp.s
@@ -159,7 +159,7 @@ src/detector/VehicleCouting.s: src/detector/VehicleCouting.cpp.s
 
 # target to generate assembly for a file
 src/detector/VehicleCouting.cpp.s:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/detector/VehicleCouting.cpp.s
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/detector/VehicleCouting.cpp.s
 .PHONY : src/detector/VehicleCouting.cpp.s
 
 src/motion/MotionTracker.o: src/motion/MotionTracker.cpp.o
@@ -167,7 +167,7 @@ src/motion/MotionTracker.o: src/motion/MotionTracker.cpp.o
 
 # target to build an object file
 src/motion/MotionTracker.cpp.o:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.o
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.o
 .PHONY : src/motion/MotionTracker.cpp.o
 
 src/motion/MotionTracker.i: src/motion/MotionTracker.cpp.i
@@ -175,7 +175,7 @@ src/motion/MotionTracker.i: src/motion/MotionTracker.cpp.i
 
 # target to preprocess a source file
 src/motion/MotionTracker.cpp.i:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.i
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.i
 .PHONY : src/motion/MotionTracker.cpp.i
 
 src/motion/MotionTracker.s: src/motion/MotionTracker.cpp.s
@@ -183,15 +183,63 @@ src/motion/MotionTracker.s: src/motion/MotionTracker.cpp.s
 
 # target to generate assembly for a file
 src/motion/MotionTracker.cpp.s:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/motion/MotionTracker.cpp.s
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/motion/MotionTracker.cpp.s
 .PHONY : src/motion/MotionTracker.cpp.s
+
+src/package_bgs/PBAS/PBAS.o: src/package_bgs/PBAS/PBAS.cpp.o
+.PHONY : src/package_bgs/PBAS/PBAS.o
+
+# target to build an object file
+src/package_bgs/PBAS/PBAS.cpp.o:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.o
+.PHONY : src/package_bgs/PBAS/PBAS.cpp.o
+
+src/package_bgs/PBAS/PBAS.i: src/package_bgs/PBAS/PBAS.cpp.i
+.PHONY : src/package_bgs/PBAS/PBAS.i
+
+# target to preprocess a source file
+src/package_bgs/PBAS/PBAS.cpp.i:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.i
+.PHONY : src/package_bgs/PBAS/PBAS.cpp.i
+
+src/package_bgs/PBAS/PBAS.s: src/package_bgs/PBAS/PBAS.cpp.s
+.PHONY : src/package_bgs/PBAS/PBAS.s
+
+# target to generate assembly for a file
+src/package_bgs/PBAS/PBAS.cpp.s:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PBAS.cpp.s
+.PHONY : src/package_bgs/PBAS/PBAS.cpp.s
+
+src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.o: src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
+.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.o
+
+# target to build an object file
+src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
+.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.o
+
+src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.i: src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i
+.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.i
+
+# target to preprocess a source file
+src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i
+.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.i
+
+src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.s: src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s
+.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.s
+
+# target to generate assembly for a file
+src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s
+.PHONY : src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.cpp.s
 
 src/tracker/BlobTracking.o: src/tracker/BlobTracking.cpp.o
 .PHONY : src/tracker/BlobTracking.o
 
 # target to build an object file
 src/tracker/BlobTracking.cpp.o:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.o
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.o
 .PHONY : src/tracker/BlobTracking.cpp.o
 
 src/tracker/BlobTracking.i: src/tracker/BlobTracking.cpp.i
@@ -199,7 +247,7 @@ src/tracker/BlobTracking.i: src/tracker/BlobTracking.cpp.i
 
 # target to preprocess a source file
 src/tracker/BlobTracking.cpp.i:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.i
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.i
 .PHONY : src/tracker/BlobTracking.cpp.i
 
 src/tracker/BlobTracking.s: src/tracker/BlobTracking.cpp.s
@@ -207,7 +255,7 @@ src/tracker/BlobTracking.s: src/tracker/BlobTracking.cpp.s
 
 # target to generate assembly for a file
 src/tracker/BlobTracking.cpp.s:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/src/tracker/BlobTracking.cpp.s
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/src/tracker/BlobTracking.cpp.s
 .PHONY : src/tracker/BlobTracking.cpp.s
 
 # Help Target
@@ -218,16 +266,22 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... car-detector"
-	@echo "... src/car_tracker.o"
-	@echo "... src/car_tracker.i"
-	@echo "... src/car_tracker.s"
+	@echo "... carTracking"
+	@echo "... src/CarTracking.o"
+	@echo "... src/CarTracking.i"
+	@echo "... src/CarTracking.s"
 	@echo "... src/detector/VehicleCouting.o"
 	@echo "... src/detector/VehicleCouting.i"
 	@echo "... src/detector/VehicleCouting.s"
 	@echo "... src/motion/MotionTracker.o"
 	@echo "... src/motion/MotionTracker.i"
 	@echo "... src/motion/MotionTracker.s"
+	@echo "... src/package_bgs/PBAS/PBAS.o"
+	@echo "... src/package_bgs/PBAS/PBAS.i"
+	@echo "... src/package_bgs/PBAS/PBAS.s"
+	@echo "... src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.o"
+	@echo "... src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.i"
+	@echo "... src/package_bgs/PBAS/PixelBasedAdaptiveSegmenter.s"
 	@echo "... src/tracker/BlobTracking.o"
 	@echo "... src/tracker/BlobTracking.i"
 	@echo "... src/tracker/BlobTracking.s"

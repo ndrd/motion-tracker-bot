@@ -47,44 +47,44 @@ RM = /usr/local/Cellar/cmake/3.2.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ndrd/Projects/tripping-ninja
+CMAKE_SOURCE_DIR = /Users/ndrd/Projects/motion-tracker-bot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ndrd/Projects/tripping-ninja
+CMAKE_BINARY_DIR = /Users/ndrd/Projects/motion-tracker-bot
 
 #=============================================================================
-# Target rules for target CMakeFiles/car-detector.dir
+# Target rules for target CMakeFiles/carTracking.dir
 
 # All Build rule for target.
-CMakeFiles/car-detector.dir/all:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/depend
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/tripping-ninja/CMakeFiles  1 2 3 4
-	@echo "Built target car-detector"
-.PHONY : CMakeFiles/car-detector.dir/all
+CMakeFiles/carTracking.dir/all:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/depend
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles  1 2 3 4 5 6
+	@echo "Built target carTracking"
+.PHONY : CMakeFiles/carTracking.dir/all
 
 # Include target in all.
-all: CMakeFiles/car-detector.dir/all
+all: CMakeFiles/carTracking.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/car-detector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/tripping-ninja/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/car-detector.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/tripping-ninja/CMakeFiles 0
-.PHONY : CMakeFiles/car-detector.dir/rule
+CMakeFiles/carTracking.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/carTracking.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ndrd/Projects/motion-tracker-bot/CMakeFiles 0
+.PHONY : CMakeFiles/carTracking.dir/rule
 
 # Convenience name for target.
-car-detector: CMakeFiles/car-detector.dir/rule
-.PHONY : car-detector
+carTracking: CMakeFiles/carTracking.dir/rule
+.PHONY : carTracking
 
 # clean rule for target.
-CMakeFiles/car-detector.dir/clean:
-	$(MAKE) -f CMakeFiles/car-detector.dir/build.make CMakeFiles/car-detector.dir/clean
-.PHONY : CMakeFiles/car-detector.dir/clean
+CMakeFiles/carTracking.dir/clean:
+	$(MAKE) -f CMakeFiles/carTracking.dir/build.make CMakeFiles/carTracking.dir/clean
+.PHONY : CMakeFiles/carTracking.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/car-detector.dir/clean
+clean: CMakeFiles/carTracking.dir/clean
 .PHONY : clean
 
 #=============================================================================

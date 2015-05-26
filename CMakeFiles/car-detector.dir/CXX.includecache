@@ -6,33 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/Users/ndrd/Projects/tripping-ninja/src/car_tracker.cpp
+/Users/ndrd/Projects/motion-tracker-bot/src/car_tracker.cpp
 iostream
 -
 opencv2/opencv.hpp
-/Users/ndrd/Projects/tripping-ninja/src/opencv2/opencv.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/opencv2/opencv.hpp
 opencv2/core/core.hpp
-/Users/ndrd/Projects/tripping-ninja/src/opencv2/core/core.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/opencv2/core/core.hpp
 opencv2/highgui/highgui.hpp
-/Users/ndrd/Projects/tripping-ninja/src/opencv2/highgui/highgui.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/opencv2/highgui/highgui.hpp
 opencv2/video/background_segm.hpp
-/Users/ndrd/Projects/tripping-ninja/src/opencv2/video/background_segm.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/opencv2/video/background_segm.hpp
 tracker/BlobTracking.hpp
-/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.hpp
 detector/VehicleCouting.h
-/Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.h
+/Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.h
 motion/MotionTracker.hpp
-/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.hpp
 opencv2/imgproc/imgproc.hpp
-/Users/ndrd/Projects/tripping-ninja/src/opencv2/imgproc/imgproc.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/opencv2/imgproc/imgproc.hpp
 opencv2/video/video.hpp
-/Users/ndrd/Projects/tripping-ninja/src/opencv2/video/video.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/opencv2/video/video.hpp
 
-/Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.cpp
+/Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.cpp
 VehicleCouting.h
-/Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.h
+/Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.h
 
-/Users/ndrd/Projects/tripping-ninja/src/detector/VehicleCouting.h
+/Users/ndrd/Projects/motion-tracker-bot/src/detector/VehicleCouting.h
 iostream
 -
 string
@@ -42,31 +42,31 @@ cv.h
 highgui.h
 -
 cvblob.h
-/Users/ndrd/Projects/tripping-ninja/src/detector/cvblob.h
+/Users/ndrd/Projects/motion-tracker-bot/src/detector/cvblob.h
 
-/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.cpp
+/Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.cpp
 MotionTracker.hpp
-/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.hpp
 string
 -
 iostream
 -
 
-/Users/ndrd/Projects/tripping-ninja/src/motion/MotionTracker.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/motion/MotionTracker.hpp
 iostream
 -
 string
 -
 opencv2/opencv.hpp
-/Users/ndrd/Projects/tripping-ninja/src/motion/opencv2/opencv.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/motion/opencv2/opencv.hpp
 cvblob.h
-/Users/ndrd/Projects/tripping-ninja/src/motion/cvblob.h
+/Users/ndrd/Projects/motion-tracker-bot/src/motion/cvblob.h
 
-/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.cpp
+/Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.cpp
 BlobTracking.hpp
-/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.hpp
 
-/Users/ndrd/Projects/tripping-ninja/src/tracker/BlobTracking.hpp
+/Users/ndrd/Projects/motion-tracker-bot/src/tracker/BlobTracking.hpp
 iostream
 -
 cv.h
@@ -74,7 +74,7 @@ cv.h
 highgui.h
 -
 cvblob.h
-/Users/ndrd/Projects/tripping-ninja/src/tracker/cvblob.h
+/Users/ndrd/Projects/motion-tracker-bot/src/tracker/cvblob.h
 
 /usr/local/include/cvblob.h
 cvblob.h

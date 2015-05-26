@@ -48,9 +48,8 @@ class MotionTracker
 		MotionTracker();
 		
 		void init (const Mat &img, string filename);
-		void setImageBlob( const Mat &img );
 		void setTracks( const CvTracks &tracks );
-		void detect();
+		void detect(Mat &img, const CvTracks &tracks, long &frame, const long &fps);
 
 	private:
 		ObjectPosition getObjectPosition(const CvPoint2D64f centroid);

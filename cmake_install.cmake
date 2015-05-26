@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ndrd/Projects/tripping-ninja
+# Install script for directory: /Users/ndrd/Projects/motion-tracker-bot
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/ndrd/Projects/tripping-ninja/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/ndrd/Projects/motion-tracker-bot/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
