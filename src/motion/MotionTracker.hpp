@@ -43,13 +43,18 @@ class MotionTracker
 		map <CvID, ObjectPosition> positions;
 		long objectFromStartToEnd;
 		long objectFromEndToStart;
+		double fps;
+		float realDistance;
+		const int UMBRAL = 30;
 
 	public:
 		MotionTracker();
 		
 		void init (const Mat &img, string filename);
 		void setTracks( const CvTracks &tracks );
-		void detect(Mat &img, long &frame, const long &fps);
+		void setRealDistance( const float distance);
+		void setFPS( const double fps);
+		void detect(Mat &img, long &frame);
 
 	private:
 		ObjectPosition getObjectPosition(const CvPoint2D64f centroid);

@@ -93,6 +93,11 @@ MotionTracker::MotionTracker(): objectFromStartToEnd(0), objectFromEndToStart(0)
   std::cout << "MotionTracker()" << std::endl;
 }
 
+void MotionTracker::setFPS(const double f)
+{
+  fps = f;
+}
+
 void MotionTracker::init(const Mat &img, string filename)
 {
 	img_input = img;
@@ -125,13 +130,12 @@ void MotionTracker::init(const Mat &img, string filename)
 
 		do
 		{
-			cv::imshow("Draw start line", Position::img1);
-			cvSetMouseCallback("Draw start line", Position::secondLine_on_mouse, NULL);
+			cv::imshow("Draw end line", Position::img1);
+			cvSetMouseCallback("Draw end line", Position::secondLine_on_mouse, NULL);
   			key = cvWaitKey(0);
 
   			if (Position::l2Defined) 
-				break;
-			
+				break;			
 
 		} while(1) ;
 
@@ -141,17 +145,23 @@ void MotionTracker::init(const Mat &img, string filename)
 		Position::p6.x = (int) (Position::p2.x + Position::p4.x) / 2.0;
 		Position::p6.y = (int) (Position::p2.y + Position::p4.y) / 2.0;
 
-		if (abs(Position::p1.x - Position::p2.x) > abs(Position::p1.y - Position::p2.y))
-			orientation = HORIZONTAL;
-		else
-			orientation = VERTICAL;
 
-		cout << "orientation " << orientation << endl;
+		cout << "Distance, between lines? (meters): " << endl;
+		cin >> realDistance;
 
 		Position::configured =  true;
+
 		saveConfig(filename);
 
 	}
+
+	if (abs(Position::p1.x - Position::p2.x) > abs(Position::p1.y - Position::p2.y))
+		orientation = HORIZONTAL;
+	else
+		orientation = VERTICAL;
+
+	cout << "orientation " << orientation << endl;
+
 
 }
 
@@ -166,11 +176,17 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 
 	if (orientation == HORIZONTAL)
 	{
+		cout << "HORIZONTAL";
 		if ( centroid.x  < Position::p1.x ) 
 		{
 			position = START;
 		}
-		if ( centroid.x > Position::p2.x )
+		else if ( centroid.x >= Position::p5.x - UMBRAL || centroid.x <= Position::p6.x + UMBRAL )
+		{
+			cout << "HALF" << endl;
+			 position = HALF;
+		} 
+		else
 		{
 			position =  END;
 		}
@@ -178,11 +194,17 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 
 	if (orientation == VERTICAL)
 	{
+		cout << "vertical";
 		if ( centroid.y  < Position::p1.y ) 
 		{
 			position = START;
 		}
-		if ( centroid.y > Position::p2.y )
+		else if (centroid.x >= Position::p5.x - UMBRAL || centroid.x <= Position::p6.x + UMBRAL  )
+		{
+			cout << "HHaLf" << endl;
+			position = HALF;
+		}
+		else if ( centroid.y > Position::p2.y )
 		{
 			position =  END;
 		}
@@ -191,7 +213,7 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 	return position;
 }
 
-void MotionTracker::detect(Mat &img_input, long &frame, const long &fps)
+void MotionTracker::detect(Mat &img_input, long &frame)
 {
 	if ( img_input.empty() )
 		return;
@@ -201,7 +223,7 @@ void MotionTracker::detect(Mat &img_input, long &frame, const long &fps)
 
   	if ( !Position::configured )
   		loadConfig(Position::videoFilename);
-	/* track blobs */  	
+
 
   for(std::map<cvb::CvID,cvb::CvTrack*>::iterator it = tracks.begin() ; it != tracks.end(); it++)
 	{
@@ -209,6 +231,45 @@ void MotionTracker::detect(Mat &img_input, long &frame, const long &fps)
 		CvTrack* track = (*it).second;
 
 		CvPoint2D64f centroid  = track->centroid;
+
+		if (track->inactive == 0) 
+		{
+			if (positions.count(id) > 0)
+			{
+				map<CvID, ObjectPosition>::iterator ita = positions.find(id);
+				ObjectPosition previous = ita->second;
+
+				ObjectPosition current  = getObjectPosition(centroid);
+
+				if (current != previous)
+				{
+					if ( previous == START && current == END)
+					{
+						objectFromStartToEnd++;
+					} 
+					else if ( previous == END && current == START )
+					{
+						objectFromEndToStart++;
+					}
+				}
+				else if (current ==  HALF)
+				{
+					cout << "speed" << realDistance / (track->lifetime/fps) << "m/s" << endl;
+
+				}
+
+			}
+			else
+			{
+				cout << "First position" << endl;
+
+				ObjectPosition position = getObjectPosition(centroid);
+				cout << position << endl;
+
+				if (position != STOP)
+					positions.insert(pair<CvID, ObjectPosition>(id, position));
+			}
+		}
 	}
 
   	/* show lines */
@@ -245,6 +306,7 @@ void MotionTracker::saveConfig(string name)
 	cvWriteInt(fs, "l3p1y", Position::p5.y);
 	cvWriteInt(fs, "l3p2x", Position::p6.x);
 	cvWriteInt(fs, "l3p2y", Position::p6.y);
+	cvWriteReal(fs, "distance", realDistance);
 
 
 	cvReleaseFileStorage(&fs);
@@ -252,12 +314,13 @@ void MotionTracker::saveConfig(string name)
 
 void MotionTracker::loadConfig(string name)
 {
-	string fn = "config/" + name + ".xml";
+	string fn = "config/name.xml";
 	cout << fn.c_str() << endl;
 
 	CvFileStorage* fs = cvOpenFileStorage(fn.c_str(), 0, CV_STORAGE_READ);
 
 	debug = cvReadIntByName(fs, 0, "debug", true);
+	realDistance = cvReadRealByName(fs, 0, "distance", 1);
 	Position::configured = cvReadIntByName(fs, 0, "configured", 1);
 	Position::videoFilename = cvReadStringByName(fs, 0, "videoFilename", "");
 	// read the first line
