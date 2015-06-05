@@ -41,6 +41,7 @@ class MotionTracker
 		map <CvID, vector<CvPoint2D64f> > points;
 		Orientation orientation;
 		map <CvID, ObjectPosition> positions;
+		map <CvID, vector <float> > speeds;
 		long objectFromStartToEnd;
 		long objectFromEndToStart;
 		double fps;
@@ -59,7 +60,7 @@ class MotionTracker
 	private:
 		ObjectPosition getObjectPosition(const CvPoint2D64f centroid);
 
-		void saveConfig(const string name);
-		void loadConfig(const string name);
+		void saveConfig(const string &name);
+		void loadConfig(const string &name);
 
 };

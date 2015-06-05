@@ -58,7 +58,7 @@ int main(int argc, const char* argv[])
 		if (mustResize)
 			resize(frame, frame, Size(frame.size().width/2, frame.size().height/2) );  
 
-		medianBlur(frame, frame, 11);
+		//edianBlur(frame, frame, 11);
 		pMOG->operator()(frame, noBackground);
 
 		if ( !noBackground.empty())
