@@ -71,6 +71,10 @@ int main(int argc, const char* argv[])
 			break;     
 	}
 
+	cout << endl << "start -> end " << tracker->objectFromStartToEnd << endl;
+	cout << "end -> start " << tracker->objectFromEndToStart << endl;
+
+
 	return 0;
 
 }  

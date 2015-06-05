@@ -182,10 +182,12 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 		{
 			position = START;
 		}
-		else if ( centroid.x >= Position::p5.x - UMBRAL || centroid.x <= Position::p6.x + UMBRAL )
+		else if ( centroid.x >= Position::p5.x - UMBRAL || centroid.x <= Position::p5.x + UMBRAL )
 		{
 			if (!Position::speedCalculated)
 				position = HALF;
+			else
+				position = END;
 
 		} 
 		else if ( centroid.x == Position::p3.x || centroid.x == Position::p4.x )
@@ -204,6 +206,8 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 		{
 			if (!Position::speedCalculated)
 				position = HALF;
+			else
+				position =  END;
 		}
 		else if (!centroid.y > Position::p2.y )
 		{
@@ -225,14 +229,14 @@ void MotionTracker::detect(Mat &img_input, long &frame)
   	if ( !Position::configured )
   		loadConfig(Position::videoFilename);
 
-
-  for(std::map<cvb::CvID,cvb::CvTrack*>::iterator it = tracks.begin() ; it != tracks.end(); it++)
+  	for(std::map<cvb::CvID,cvb::CvTrack*>::iterator it = tracks.begin() ; it != tracks.end(); it++)
 	{
+		Position::speedCalculated =  false;
+
 		CvID id = (*it).first;
 		CvTrack* track = (*it).second;
 
 		CvPoint2D64f centroid  = track->centroid;
-		Position::speedCalculated =  false;
 
 		if (track->inactive == 0) 
 		{
@@ -245,16 +249,16 @@ void MotionTracker::detect(Mat &img_input, long &frame)
 
 				if (current != previous)
 				{
-					if ( previous == START && current == END)
+					if (current == END && Position::speedCalculated)
 					{
 						objectFromStartToEnd++;
 					} 
-					else if ( previous == END && current == START )
+					else if (current == START && Position::speedCalculated)
 					{
 						objectFromEndToStart++;
 					}
 				}
-				else if (current ==  HALF && previous == START)
+				else if (previous ==  HALF && !Position::speedCalculated)
 				{
 					cout << track->lifetime;
 					cout << id << " speed " << realDistance / (track->lifetime/fps) << "m/s" << endl;
@@ -272,6 +276,8 @@ void MotionTracker::detect(Mat &img_input, long &frame)
 					positions.insert(pair<CvID, ObjectPosition>(id, position));
 			}
 		}
+
+		cout << "-------------------------------------------";
 	}
 
   	/* show lines */
