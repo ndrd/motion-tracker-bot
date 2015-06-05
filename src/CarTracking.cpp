@@ -47,7 +47,6 @@ int main(int argc, const char* argv[])
 	tracker->init(frame, fileName);
 	tracker->setFPS(fps);
 	long frames  = 0;
-	cout << fps << " fps " << endl;
 
 	while (true) {     
 
@@ -58,7 +57,7 @@ int main(int argc, const char* argv[])
 		if (mustResize)
 			resize(frame, frame, Size(frame.size().width/2, frame.size().height/2) );  
 
-		medianBlur(frame, frame, 11);
+		//medianBlur(frame, frame, 11);
 		pMOG->operator()(frame, noBackground);
 
 		if ( !noBackground.empty())

@@ -22,6 +22,8 @@ namespace Position
 	Point p5;
 	Point p6;	
 
+	bool speedCalculated =  false;
+
 	bool startDraw = false;
 	bool l1Defined =  false;
 	bool l2Defined = false;
@@ -176,17 +178,17 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 
 	if (orientation == HORIZONTAL)
 	{
-		cout << "HORIZONTAL";
-		if ( centroid.x  < Position::p1.x ) 
+		if ( centroid.x  == Position::p1.x  || centroid.x == Position::p2.x) 
 		{
 			position = START;
 		}
 		else if ( centroid.x >= Position::p5.x - UMBRAL || centroid.x <= Position::p6.x + UMBRAL )
 		{
-			cout << "HALF" << endl;
-			 position = HALF;
+			if (!Position::speedCalculated)
+				position = HALF;
+
 		} 
-		else
+		else if ( centroid.x == Position::p3.x || centroid.x == Position::p4.x )
 		{
 			position =  END;
 		}
@@ -194,17 +196,16 @@ ObjectPosition MotionTracker::getObjectPosition(const CvPoint2D64f centroid)
 
 	if (orientation == VERTICAL)
 	{
-		cout << "vertical";
 		if ( centroid.y  < Position::p1.y ) 
 		{
 			position = START;
 		}
 		else if (centroid.x >= Position::p5.x - UMBRAL || centroid.x <= Position::p6.x + UMBRAL  )
 		{
-			cout << "HHaLf" << endl;
-			position = HALF;
+			if (!Position::speedCalculated)
+				position = HALF;
 		}
-		else if ( centroid.y > Position::p2.y )
+		else if (!centroid.y > Position::p2.y )
 		{
 			position =  END;
 		}
@@ -231,6 +232,7 @@ void MotionTracker::detect(Mat &img_input, long &frame)
 		CvTrack* track = (*it).second;
 
 		CvPoint2D64f centroid  = track->centroid;
+		Position::speedCalculated =  false;
 
 		if (track->inactive == 0) 
 		{
@@ -252,17 +254,17 @@ void MotionTracker::detect(Mat &img_input, long &frame)
 						objectFromEndToStart++;
 					}
 				}
-				else if (current ==  HALF)
+				else if (current ==  HALF && previous == START)
 				{
-					cout << "speed" << realDistance / (track->lifetime/fps) << "m/s" << endl;
+					cout << track->lifetime;
+					cout << id << " speed " << realDistance / (track->lifetime/fps) << "m/s" << endl;
+					Position::speedCalculated = true;
 
 				}
 
 			}
 			else
 			{
-				cout << "First position" << endl;
-
 				ObjectPosition position = getObjectPosition(centroid);
 				cout << position << endl;
 
